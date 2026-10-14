@@ -6,7 +6,7 @@
 - Require valid public HTTPS ingest configuration for distribution, verify its absence from source archives and scan for Sentry management tokens.
 - Clearly show unconfigured source builds and prevent enabling uploads there, while allowing existing consent to be revoked.
 - Retain the released danmaku, native window and SDK timeout improvements; no dependency upgrade.
-- Distribution and remote symbolication gates are pending; see [release readiness](Docs/RELEASE_READINESS_0.8.6.md).
+- Release tests, final App/helper backend source lines and UUIDs, signing/notarization, installation and all 16 public asset checks passed; see [formal verification](Docs/RELEASE_VALIDATION_0.8.6.md).
 
 ## [0.8.5] - 2026-10-14
 

@@ -2,13 +2,13 @@
 
 - 对照版本：0.8.6（Build 139）
 - 最近更新：2026-10-14
-- 当前稳定版本：0.8.5（Build 138），Apple Silicon / arm64 / macOS 12.0+
-- 最新公开公证 DMG：0.8.5（Build 138）；Developer ID、Apple Accepted、Staple、Gatekeeper 与安装 smoke 均通过
-- 发布 tag `v0.8.5` 固定 `b7fd9026bfee95d2d815dbb39e985225c3004e67`；正式门禁结果见[发布验证记录](../../../../Docs/RELEASE_VALIDATION_0.8.5.md)。
+- 当前稳定版本：0.8.6（Build 139），Apple Silicon / arm64 / macOS 12.0+
+- 最新公开公证 DMG：0.8.6（Build 139）；Developer ID、Apple Accepted、Staple、Gatekeeper 与安装 smoke 均通过
+- 发布 tag `v0.8.6` 固定 `590a065d93116d341f94b925b46d8fed0d719744`；正式门禁结果见[发布验证记录](../../../../Docs/RELEASE_VALIDATION_0.8.6.md)。
 
-0.8.5 正式发布与安装门禁通过。既有性能数字及跨平台保证不会自动扩大为本次覆盖，未新增全面性能采样；见[正式验证](../../../../Docs/RELEASE_VALIDATION_0.8.5.md)。
+本轮发布与安装门禁通过。既有性能数字及跨平台保证不会自动扩大为本次覆盖，未新增全面性能采样；见[正式验证](../../../../Docs/RELEASE_VALIDATION_0.8.6.md)。
 
-0.8.6 为当前发布候选，目标 tag `v0.8.6`；服务启用与真实新 UUID 的后台验证须通过后公开，见[发布就绪](../../../../Docs/RELEASE_READINESS_0.8.6.md)。下方既有实机覆盖仍按原范围记录。
+0.8.6 已正式发布并安装，最终源码行/UUID与公开资产门禁通过。下方既有实机与性能覆盖仍按原范围记录，见[正式验证](../../../../Docs/RELEASE_VALIDATION_0.8.6.md)。
 
 ## 0.8.4 验证边界
 

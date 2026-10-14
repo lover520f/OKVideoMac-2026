@@ -2,7 +2,7 @@
 
 OKVideoMac 是面向 Apple Silicon Mac 的原生视频与直播客户端。源兼容性主要取决于
 原生 Xtream、M3U/XMLTV、配置格式和运行时，而不是简单以 TVBox、FongMi、MiraPlay 或 CatPawOpen
-等生态名称判断。最新稳定版本为 **0.8.5（Build 138）**，支持
+等生态名称判断。最新稳定版本为 **0.8.6（Build 139）**，支持
 **arm64**，最低系统为 **macOS 12.0**。公开二进制通过 Developer ID 签名、Apple 公证、
 Staple 和 Gatekeeper 验证后再通过 GitHub Release 分发。
 
@@ -11,10 +11,10 @@ Staple 和 Gatekeeper 验证后再通过 GitHub Release 分发。
 
 ## 当前版本
 
-- 当前发布候选：0.8.6（Build 139）
-- 目标 tag：`v0.8.6`，分发门禁通过后公开；既有 v0.8.5 保持不变。
+- 当前稳定版本：0.8.6（Build 139）
+- Tag：`v0.8.6` 固定 `590a065d93116d341f94b925b46d8fed0d719744`；既有 v0.8.5 资产保持不变。
 - source release index：`OKVideoMac-0.8.6-build139-SOURCE_RELEASE_INDEX.json`。
-- 本轮加入本机崩溃恢复、有限 SDK 文件检查，并保留原生窗口重开；远程上传未配置。见[发布说明](../Docs/RELEASE_NOTES_0.8.5.md)与[正式验证](../Docs/RELEASE_VALIDATION_0.8.5.md)。
+- 官方 DMG 可在用户同意后上传过滤的崩溃报告；默认关闭，源码服务配置留空。见[发布说明](../Docs/RELEASE_NOTES_0.8.6.md)与[正式验证](../Docs/RELEASE_VALIDATION_0.8.6.md)。
 - 最低系统：macOS 12.0
 - 支持架构：Apple Silicon / arm64
 - 播放历史与收藏保留配置、站点和稳定媒体身份；旧记录经过迁移后仍可准确恢复，

@@ -1,8 +1,6 @@
 # OKVideoMac
 
-The current release candidate is **0.8.6 (Build 139)**, enabling consent-based crash uploads in the official DMG while public source defaults remain unconfigured. See [configuration](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md), [release notes](Docs/RELEASE_NOTES_0.8.6.md) and [readiness](Docs/RELEASE_READINESS_0.8.6.md). The stable 0.8.5 assets remain immutable until publication.
-
-The latest stable release is **0.8.5 (Build 138)**, adding local crash recovery, bounded Android SDK inspection, native window reopening and improved danmaku text rendering. Developer ID, Apple notarization and all 16 public assets passed verification. Remote crash uploading is not configured. See [release notes](Docs/RELEASE_NOTES_0.8.5.md) and [verification](Docs/RELEASE_VALIDATION_0.8.5.md).
+The latest stable release is **0.8.6 (Build 139)**. Official DMGs can send filtered crash reports after user consent; public source defaults remain unconfigured. Signing, notarization, final-build symbolication and all 16 public assets passed verification. See [release notes](Docs/RELEASE_NOTES_0.8.6.md), [configuration](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md) and [verification](Docs/RELEASE_VALIDATION_0.8.6.md).
 
 **0.8.4 (Build 137)** fixes the SwiftUI/AppKit toolbar ownership path associated with the 0.8.3 startup crash. The user confirmed successful macOS 27.0.1 testing; see [release notes](Docs/RELEASE_NOTES_0.8.4.md) and [formal verification](Docs/RELEASE_VALIDATION_0.8.4.md).
 
@@ -19,7 +17,7 @@ selected TVBox/CatVod/CatPaw-style providers, and libmpv playback.**
 Built with Swift and SwiftUI/AppKit. Android is an optional compatibility layer
 for selected Java/Dex providers.
 
-The latest stable release is **0.8.5 (Build 138)**, Developer ID signed and Apple-notarized.
+The latest stable release is **0.8.6 (Build 139)**, Developer ID signed and Apple-notarized.
 
 **Native macOS · Xtream · IPTV/VOD · M3U/XMLTV · libmpv · Multi-provider Search · QuickJS/Node Spiders**
 
@@ -27,15 +25,19 @@ The latest stable release is **0.8.5 (Build 138)**, Developer ID signed and Appl
 
 ### [Download the latest stable release →](https://github.com/yaolin-dev/OKVideoMac/releases/latest)
 
-**0.8.5 (Build 138)** · macOS 12.0+ · Apple Silicon (`arm64`) only.
+**0.8.6 (Build 139)** · macOS 12.0+ · Apple Silicon (`arm64`) only.
 
-Download the Developer ID signed and Apple-notarized [v0.8.5 DMG](https://github.com/yaolin-dev/OKVideoMac/releases/download/v0.8.5/OKVideoMac-0.8.5.dmg). Stapling, Gatekeeper, final DMG and fresh-install smoke checks passed.
+Download the Developer ID signed and Apple-notarized [v0.8.6 DMG](https://github.com/yaolin-dev/OKVideoMac/releases/download/v0.8.6/OKVideoMac-0.8.6.dmg). Stapling, Gatekeeper, final DMG and fresh-install smoke checks passed.
 
 Open the DMG and drag `OKVideoMac.app` to Applications. You do not need to disable Gatekeeper or SIP. Checksums, release notes, source archives, SBOMs and notices accompany the release.
 
 > OKVideoMac is a player and provider client. It does not include third-party video sources, accounts, cookies, parsing services or DRM keys.
 
-## New in 0.8.5
+## New in 0.8.6
+
+Consent-based remote crash uploads in official DMGs, private packaging configuration and clear unconfigured status for source builds. Reports stay local until the user opts in from Settings → Advanced. See [verification](Docs/RELEASE_VALIDATION_0.8.6.md).
+
+## 0.8.5 history
 
 Local crash recovery and coordinated shutdown, bounded Android SDK file checks, and native window creation after all browser windows close. Danmaku keeps filled, colored glyphs with a soft black shadow whose logical size matches at 1x and Retina 2x. This rendering change was already included in the October 11 local test build; ordinary subtitle tracks have no new changes in 0.8.5. See the [release-note addendum](Docs/RELEASE_NOTES_0.8.5_ADDENDUM.md). This build has no remote crash-upload endpoint. See [verification](Docs/RELEASE_VALIDATION_0.8.5.md).
 

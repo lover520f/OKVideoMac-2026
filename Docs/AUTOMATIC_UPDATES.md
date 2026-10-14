@@ -1,8 +1,12 @@
 # Automatic updates
 
+## Published 0.8.6
+
+The stable latest feed offers 0.8.6 (139), retaining the existing HTTPS feed and public key. Its XML/DMG signatures and all 16 anonymous asset hashes pass. This does not claim a new complete Sparkle update-installation cycle. See [verification](RELEASE_VALIDATION_0.8.6.md).
+
 ## Published 0.8.5 update
 
-The stable latest feed offers 0.8.5 (138), retaining the existing HTTPS feed and public key. All 16 anonymous downloads, latest feed bytes and XML/DMG signatures pass. The formal App is installed and startup observed; this does not claim a complete new update-installation cycle or 24-hour schedule. See [verification](RELEASE_VALIDATION_0.8.5.md).
+At 0.8.5 publication, the stable latest feed offered 0.8.5 (138), retaining the existing HTTPS feed and public key. All 16 anonymous downloads, latest feed bytes and XML/DMG signatures pass. The formal App is installed and startup observed; this does not claim a complete new update-installation cycle or 24-hour schedule. See [verification](RELEASE_VALIDATION_0.8.5.md).
 
 ## Published 0.8.4 update
 

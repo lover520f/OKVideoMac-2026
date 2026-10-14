@@ -1,8 +1,6 @@
 # OKVideoMac
 
-当前发布候选为 **0.8.6（Build 139）**，官方 DMG 可在用户同意后上传过滤的崩溃报告，公开源码的服务配置留空。见[配置流程](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md)、[发布说明](Docs/RELEASE_NOTES_0.8.6.md)和[发布就绪](Docs/RELEASE_READINESS_0.8.6.md)。正式公开前，0.8.5 稳定资产保持不变。
-
-最新稳定版本为 **0.8.5（Build 138）**，新增本机崩溃恢复、有限等待的 Android SDK 检查，修复关闭全部浏览窗口后的重开，并改进弹幕文字渲染。本次没有配置远程崩溃上传。签名、公证与 16 个公开资产核验通过；见[发布说明](Docs/RELEASE_NOTES_0.8.5.md)和[正式验证](Docs/RELEASE_VALIDATION_0.8.5.md)。
+最新稳定版本为 **0.8.6（Build 139）**。官方 DMG 在用户同意后可发送过滤后的崩溃报告，公开源码默认没有实际服务地址。签名、公证、最终符号后台解析与16项公开资产核验通过；见[发布说明](Docs/RELEASE_NOTES_0.8.6.md)、[配置流程](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md)和[正式验证](Docs/RELEASE_VALIDATION_0.8.6.md)。
 
 **0.8.4（Build 137）**修复与 0.8.3 启动崩溃相关的工具栏归属路径，用户已确认 macOS 27.0.1 实机测试正常。见[发布说明](Docs/RELEASE_NOTES_0.8.4.md)和[正式验证](Docs/RELEASE_VALIDATION_0.8.4.md)。
 
@@ -19,7 +17,7 @@
 使用 Swift 和 SwiftUI/AppKit 构建。Android 是部分 Java/Dex Provider 按需使用的
 可选兼容层。
 
-最新稳定版本为 **0.8.5（Build 138）**，已完成 Developer ID 签名和 Apple 公证。
+最新稳定版本为 **0.8.6（Build 139）**，已完成 Developer ID 签名和 Apple 公证。
 
 **原生 macOS · Xtream · IPTV/VOD · M3U/XMLTV · libmpv · 多站搜索 · QuickJS/Node Spider**
 
@@ -27,15 +25,19 @@
 
 ### [下载最新稳定版本 →](https://github.com/yaolin-dev/OKVideoMac/releases/latest)
 
-**0.8.5（Build 138）** · macOS 12.0+ · 仅支持 Apple Silicon（arm64）。
+**0.8.6（Build 139）** · macOS 12.0+ · 仅支持 Apple Silicon（arm64）。
 
-下载已签名、公证的 [v0.8.5 DMG](https://github.com/yaolin-dev/OKVideoMac/releases/download/v0.8.5/OKVideoMac-0.8.5.dmg)，Staple、Gatekeeper、最终 DMG 与全新安装 smoke 均通过。
+下载已签名、公证的 [v0.8.6 DMG](https://github.com/yaolin-dev/OKVideoMac/releases/download/v0.8.6/OKVideoMac-0.8.6.dmg)，Staple、Gatekeeper、最终 DMG 与全新安装 smoke 均通过。
 
 打开 DMG，将 `OKVideoMac.app` 拖入 Applications，无需关闭 Gatekeeper 或 SIP。校验和、发布说明、源码、许可证、SBOM 随发布提供。
 
 > 本项目是播放器与源客户端，不内置第三方内容源、账号、Cookie、解析服务或 DRM 密钥。
 
-## 0.8.5 新增与修复
+## 0.8.6 新增与修复
+
+官方 DMG 可发送过滤后的崩溃报告；默认关闭，在“设置 → 高级”选择授权。源码实际服务地址留空，未配置构建明确显示不可上传。管理令牌不进入 App；见[正式验证](Docs/RELEASE_VALIDATION_0.8.6.md)。
+
+## 0.8.5 历史新增与修复
 
 - 本机崩溃恢复与协同退出，Android SDK 检查有限等待，关闭全部浏览窗口后可重新新建窗口。
 - 弹幕文字保留填充和原颜色，以柔和黑色阴影替代描边，普通屏与 Retina 屏的阴影逻辑大小一致。
