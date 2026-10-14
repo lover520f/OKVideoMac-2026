@@ -11,9 +11,9 @@ Staple 和 Gatekeeper 验证后再通过 GitHub Release 分发。
 
 ## 当前版本
 
-- 当前稳定版本：0.8.5（Build 138）
-- Tag：`v0.8.5` 固定 `b7fd9026bfee95d2d815dbb39e985225c3004e67`；既有 v0.8.4 保持不变。
-- source release index：`OKVideoMac-0.8.5-build138-SOURCE_RELEASE_INDEX.json`。
+- 当前发布候选：0.8.6（Build 139）
+- 目标 tag：`v0.8.6`，分发门禁通过后公开；既有 v0.8.5 保持不变。
+- source release index：`OKVideoMac-0.8.6-build139-SOURCE_RELEASE_INDEX.json`。
 - 本轮加入本机崩溃恢复、有限 SDK 文件检查，并保留原生窗口重开；远程上传未配置。见[发布说明](../Docs/RELEASE_NOTES_0.8.5.md)与[正式验证](../Docs/RELEASE_VALIDATION_0.8.5.md)。
 - 最低系统：macOS 12.0
 - 支持架构：Apple Silicon / arm64
@@ -36,7 +36,12 @@ Staple 和 Gatekeeper 验证后再通过 GitHub Release 分发。
   [GitHub Release](https://github.com/yaolin-dev/OKVideoMac/releases/tag/v0.8.5)；
   [正式验证记录](../Docs/RELEASE_VALIDATION_0.8.5.md)
 
-## 0.8.5 正式发布
+## 0.8.6 发布候选
+
+- 官方 DMG 打包时注入接收配置，用户同意后才上传过滤的崩溃报告；公开源码配置留空，后台管理令牌不进入 App。
+- 发布验证尚待完成，见[发布就绪](../Docs/RELEASE_READINESS_0.8.6.md)和[配置流程](../Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md)。
+
+## 0.8.5 历史正式发布
 
 - 本机崩溃恢复、受控诊断清理与 SDK 检查有限等待。远程上传未配置。
 - 弹幕文字保留填充与颜色，改用柔和黑色阴影，并统一普通屏与 Retina 屏的阴影逻辑大小。此改进已在 10 月 11 日的本地弹幕测试版提供，本次纳入稳定发布；普通视频字幕轨道未新增改动。见[发布说明补充](../Docs/RELEASE_NOTES_0.8.5_ADDENDUM.md)。

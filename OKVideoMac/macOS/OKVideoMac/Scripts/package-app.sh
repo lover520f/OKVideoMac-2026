@@ -9,7 +9,7 @@ source "$SCRIPT_DIR/build-environment.sh"
 
 usage() {
   cat <<'USAGE'
-Usage: package-app.sh [--mode local|distribution] [--notarize]
+Usage: package-app.sh [--mode local|distribution] [--notarize] [--crash-config FILE]
        package-app.sh --mode local --local-acceptance --local-developer-id
 
 --local-developer-id signs a captured, local-only acceptance build using
@@ -17,7 +17,11 @@ DEVELOPER_ID_APPLICATION. It does not make it eligible for public release.
 
 Modes:
   local         Ad-hoc Hardened Runtime package for local testing (default).
-  distribution  Developer ID Application package suitable for notarization.
+  distribution  Developer ID package; requires an owner-only crash DSN file.
+
+--crash-config FILE contains only SENTRY_DSN and must be outside the checkout.
+The public DSN is injected into the assembled App before signing; values are not logged.
+Local/source builds retain local capture without a release upload endpoint.
 
 Distribution environment:
   DEVELOPER_ID_APPLICATION   Certificate name or SHA-1 identity (required).
@@ -27,6 +31,7 @@ USAGE
 
 PACKAGE_MODE="${OKVIDEOMAC_PACKAGE_MODE:-local}"
 NOTARIZE=0
+CRASH_CONFIG=""
 LOCAL_ACCEPTANCE=0
 LOCAL_DEVELOPER_ID=0
 ISOLATED_IDENTITY_ACCEPTANCE=0
@@ -38,6 +43,14 @@ while [[ "$#" -gt 0 ]]; do
         exit 64
       fi
       PACKAGE_MODE="$2"
+      shift 2
+      ;;
+    --crash-config)
+      if [[ "$#" -lt 2 ]]; then
+        echo "--crash-config requires an owner-only file outside the checkout." >&2
+        exit 64
+      fi
+      CRASH_CONFIG="$2"
       shift 2
       ;;
     --notarize)
@@ -67,6 +80,12 @@ while [[ "$#" -gt 0 ]]; do
       ;;
   esac
 done
+
+crash_configuration_arguments=(--mode "$PACKAGE_MODE" --repo "$REPOSITORY_ROOT")
+if [[ -n "$CRASH_CONFIG" ]]; then
+  crash_configuration_arguments+=(--config "$CRASH_CONFIG")
+fi
+PYTHONDONTWRITEBYTECODE=1 python3 "$SCRIPT_DIR/configure-crash-reporting.py" check "${crash_configuration_arguments[@]}"
 
 identity_build_arguments=(ONLY_ACTIVE_ARCH=YES)
 if [[ "$ISOLATED_IDENTITY_ACCEPTANCE" -eq 1 ]]; then
@@ -284,6 +303,9 @@ fi
 
 mkdir -p "$ARTIFACTS"
 cp -R "$APP_SOURCE" "$APP_DESTINATION"
+# Release configuration is a private packaging input, never an Xcode/source setting.
+PYTHONDONTWRITEBYTECODE=1 python3 "$SCRIPT_DIR/configure-crash-reporting.py" apply \
+  "${crash_configuration_arguments[@]}" --app "$APP_DESTINATION"
 # Xcode retains privacy resources for static frameworks in resource-only stubs.
 # Their generated temporary install names must not become release payload.
 PYTHONDONTWRITEBYTECODE=1 python3 "$SCRIPT_DIR/normalize-static-sdk-stubs.py" "$APP_DESTINATION"
@@ -343,6 +365,9 @@ if [[ ! -f "$SOURCE_RELEASE_INDEX" ]]; then
   echo "Source release index is missing: $SOURCE_RELEASE_INDEX" >&2
   exit 1
 fi
+PYTHONDONTWRITEBYTECODE=1 python3 "$SCRIPT_DIR/configure-crash-reporting.py" verify \
+  "${crash_configuration_arguments[@]}" --app "$APP_DESTINATION" \
+  --source-archive "$SOURCE_RELEASE_DIR/${SOURCE_RELEASE_BASE}-source.tar.gz"
 FRAMEWORKS="$APP_DESTINATION/Contents/Frameworks"
 mkdir -p "$FRAMEWORKS"
 

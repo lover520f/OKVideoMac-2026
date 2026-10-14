@@ -109,7 +109,10 @@ final class CrashUploadControllerTests: XCTestCase {
     func testMissingConfigurationStillAllowsLocalConsentAndRevoke() throws {
         let (store, sender) = try fixture(); try save(store)
         let model = CrashUploadController(store: store, configuration: nil, adapter: sender)
+        XCTAssertEqual(model.status, .unconfigured); XCTAssertFalse(model.canChangeConsent)
+        model.start(); model.retry(); XCTAssertTrue(sender.ids.isEmpty)
         model.setConsent(true); XCTAssertEqual(model.status, .unconfigured); XCTAssertTrue(sender.ids.isEmpty)
+        XCTAssertTrue(model.canChangeConsent)
         model.setConsent(false); try sender.finishRevoke(); XCTAssertFalse(model.consent); XCTAssertEqual(model.pendingReports, 0)
     }
     func testStoppingBlocksRegrantAndKeepsUnsentReport() async throws {

@@ -45,6 +45,7 @@ final class CrashUploadController: ObservableObject {
     private var stopped = false
     private var stopCallbacks: [() -> Void] = []
     var captureAvailable: Bool { store != nil }
+    var canChangeConsent: Bool { captureAvailable && !stopping && (configuration != nil || consent) }
     var canRetry: Bool { consent && configuration != nil && pendingReports > 0 && !sending && !revoking && !stopping }
 
     init(store: ReportStore?, configuration: CrashUploadConfiguration?, adapter: CrashReportSending? = nil) {
@@ -54,7 +55,7 @@ final class CrashUploadController: ObservableObject {
         let initialConsent = store?.consent ?? false
         consent = initialConsent
         pendingReports = (try? store?.records().count) ?? 0
-        status = store == nil ? .unavailable : configuration == nil && initialConsent ? .unconfigured : .localOnly
+        status = store == nil ? .unavailable : configuration == nil ? .unconfigured : .localOnly
     }
 
     func start() {

@@ -6,7 +6,7 @@ struct CrashDiagnosticsControls: View {
         VStack(alignment: .leading, spacing: 10) {
             Toggle(L10n.string("crash.recovery.consent", fallback: "Send crash reports to help improve OKVideoMac"),
                    isOn: Binding(get: { diagnostics.consent }, set: { diagnostics.setConsent($0) }))
-                .disabled(!diagnostics.captureAvailable || diagnostics.stopping)
+                .disabled(!diagnostics.canChangeConsent)
                 .accessibilityIdentifier("crash-upload-consent")
             Text(statusText).font(.callout).foregroundColor(.secondary)
                 .accessibilityIdentifier("crash-upload-status")

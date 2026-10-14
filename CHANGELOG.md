@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.6] - 2026-10-14
+
+- Configure consent-based crash uploads for the official DMG through an owner-only packaging input outside the checkout; public source keeps an empty endpoint. Management tokens never enter the App.
+- Require valid public HTTPS ingest configuration for distribution, verify its absence from source archives and scan for Sentry management tokens.
+- Clearly show unconfigured source builds and prevent enabling uploads there, while allowing existing consent to be revoked.
+- Retain the released danmaku, native window and SDK timeout improvements; no dependency upgrade.
+- Distribution and remote symbolication gates are pending; see [release readiness](Docs/RELEASE_READINESS_0.8.6.md).
+
 ## [0.8.5] - 2026-10-14
 
 - Add bounded local crash capture/recovery, consent controls and coordinated shutdown. This build has no remote crash-upload endpoint.

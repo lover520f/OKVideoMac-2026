@@ -1,5 +1,9 @@
 # Immutable Corresponding-Source Release Process
 
+## 0.8.6 candidate identity
+
+The candidate uses `OKVideoMac-0.8.6.dmg`, internal `OKVideoMac-0.8.6-macOS-arm64.zip`, and `OKVideoMac-0.8.6-build139-SOURCE_RELEASE_INDEX.json`. Public source keeps an empty crash ingest configuration; the official App receives its public DSN as a private packaging input before signing. See [configuration](CRASH_REPORTING_RELEASE_CONFIGURATION.md). Prior release assets remain immutable.
+
 ## Published 0.8.5 identity
 
 The published release uses `OKVideoMac-0.8.5.dmg`, internal `OKVideoMac-0.8.5-macOS-arm64.zip`, and `OKVideoMac-0.8.5-build138-SOURCE_RELEASE_INDEX.json`. Public distribution requires the existing exact-main-commit, signing, notarization, install and source/asset gates. Static PLCrashReporter and Sentry source/notice records accompany this release. Tag v0.8.5 pins b7fd9026bfee95d2d815dbb39e985225c3004e67; all final asset hashes passed [verification](RELEASE_VALIDATION_0.8.5.md). The existing 0.8.4 artifacts below remain immutable.

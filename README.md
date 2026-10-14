@@ -1,5 +1,7 @@
 # OKVideoMac
 
+The current release candidate is **0.8.6 (Build 139)**, enabling consent-based crash uploads in the official DMG while public source defaults remain unconfigured. See [configuration](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md), [release notes](Docs/RELEASE_NOTES_0.8.6.md) and [readiness](Docs/RELEASE_READINESS_0.8.6.md). The stable 0.8.5 assets remain immutable until publication.
+
 The latest stable release is **0.8.5 (Build 138)**, adding local crash recovery, bounded Android SDK inspection, native window reopening and improved danmaku text rendering. Developer ID, Apple notarization and all 16 public assets passed verification. Remote crash uploading is not configured. See [release notes](Docs/RELEASE_NOTES_0.8.5.md) and [verification](Docs/RELEASE_VALIDATION_0.8.5.md).
 
 **0.8.4 (Build 137)** fixes the SwiftUI/AppKit toolbar ownership path associated with the 0.8.3 startup crash. The user confirmed successful macOS 27.0.1 testing; see [release notes](Docs/RELEASE_NOTES_0.8.4.md) and [formal verification](Docs/RELEASE_VALIDATION_0.8.4.md).

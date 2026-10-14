@@ -17,6 +17,7 @@ from typing import BinaryIO, Iterable
 CHUNK_SIZE = 1024 * 1024
 OVERLAP = 512
 SECRET_PATTERNS = (
+    ("sentry-auth-token", re.compile(rb"\bsntry[su]_[A-Za-z0-9_-]{20,}\b")),
     ("private-key", re.compile(rb"-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----")),
     ("aws-access-key", re.compile(rb"\bAKIA[0-9A-Z]{16}\b")),
     ("github-token", re.compile(rb"\bgh[pousr]_[A-Za-z0-9]{30,}\b")),
@@ -26,7 +27,7 @@ SECRET_PATTERNS = (
         "credential-assignment",
         re.compile(
             rb"(?i)\b(?:api[_-]?key|password|passwd|access[_-]?token|"
-            rb"refresh[_-]?token|client[_-]?secret|apple[_-]?id[_-]?password|"
+            rb"refresh[_-]?token|sentry[_-]?auth[_-]?token|client[_-]?secret|apple[_-]?id[_-]?password|"
             rb"ac_password)\s*[:=]\s*(?:[\"'][A-Za-z0-9+/=_-]{8,}[\"']|"
             rb"[A-Za-z0-9+/=_-]{24,})"
         ),

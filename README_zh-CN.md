@@ -1,5 +1,7 @@
 # OKVideoMac
 
+当前发布候选为 **0.8.6（Build 139）**，官方 DMG 可在用户同意后上传过滤的崩溃报告，公开源码的服务配置留空。见[配置流程](Docs/CRASH_REPORTING_RELEASE_CONFIGURATION.md)、[发布说明](Docs/RELEASE_NOTES_0.8.6.md)和[发布就绪](Docs/RELEASE_READINESS_0.8.6.md)。正式公开前，0.8.5 稳定资产保持不变。
+
 最新稳定版本为 **0.8.5（Build 138）**，新增本机崩溃恢复、有限等待的 Android SDK 检查，修复关闭全部浏览窗口后的重开，并改进弹幕文字渲染。本次没有配置远程崩溃上传。签名、公证与 16 个公开资产核验通过；见[发布说明](Docs/RELEASE_NOTES_0.8.5.md)和[正式验证](Docs/RELEASE_VALIDATION_0.8.5.md)。
 
 **0.8.4（Build 137）**修复与 0.8.3 启动崩溃相关的工具栏归属路径，用户已确认 macOS 27.0.1 实机测试正常。见[发布说明](Docs/RELEASE_NOTES_0.8.4.md)和[正式验证](Docs/RELEASE_VALIDATION_0.8.4.md)。
