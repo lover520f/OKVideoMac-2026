@@ -15,4 +15,8 @@
 - A separate official release client key was enabled and its 100-errors-per-hour rate limit verified after a fresh page load. The old acceptance key/configuration and existing management-token scopes are unchanged. Actual DSN values stay in an owner-only configuration file outside the checkout.
 - Final packaging, dSYM upload, synthetic backend symbolication, signing/notarization/Gatekeeper, public asset verification and desktop installation have not run. GitHub work is a draft PR; 0.8.5 remains the stable release.
 
-Next gate: unlock the Mac and keep the desktop visible, rerun the original graphics checks and full Release suite, then complete the remaining distribution gates from a clean main exact commit. Do not overwrite old release assets.
+## Unlocked desktop revalidation
+
+The user unlocked the Mac and kept the display visible. The unchanged full Release suite passed: **1287 passed, 0 failed, 17 conditional skips, 1304 total**. All four previously blocked fullscreen cases and the crash-upload controller suite passed. A temporary caffeinate assertion kept the display awake only during this run. Earlier locked-screen failures remain recorded above; no assertions were relaxed and no tests were newly skipped.
+
+Next gate: package the clean main exact commit, verify the final private configuration/source archive boundary, and finish the remaining distribution gates. Do not overwrite old release assets.
