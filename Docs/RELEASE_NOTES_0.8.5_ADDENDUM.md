@@ -6,6 +6,8 @@
 - 普通屏（1x）与 Retina 屏（2x）使用相同的阴影逻辑大小，保持文字周围的对比效果。
 - 这项改进相对公开 v0.8.4 新增，已在 2026-10-11 的本地弹幕测试版中提供。普通视频字幕轨道在 0.8.5 没有新增处理逻辑；弹幕与字幕应分别描述。
 
+感谢 [@luoxu1314](https://github.com/luoxu1314) 在 [PR #9](https://github.com/yaolin-dev/OKVideoMac/pull/9) 中提供中文弹幕填充修复和文字栅格回归测试。正式版本已通过其他提交纳入这项修复，并补充 Retina 阴影缩放、13 点字号、阴影范围与边距测试。
+
 实现提交为 `ca0a16997acbc42e2b99af238c204a4fffadc98e`，包含在正式 tag `v0.8.5` 指向的 `b7fd9026bfee95d2d815dbb39e985225c3004e67` 中。最终完整 Release XCTest 的 `DanmakuTextRasterizationTests` 四项全部通过，覆盖中英文、多字号、彩色填充、1x/2x 阴影范围与边距；见[正式验证记录](RELEASE_VALIDATION_0.8.5.md)。这不代表所有显示器和字幕格式的实机矩阵均已验证。
 
 本次只补充说明，已发布的 App、DMG、tag、更新清单及构建时源码/发布说明附件保持原样。GitHub Release 页面正文与仓库当前文档显示补充内容，附件保留构建时快照。
